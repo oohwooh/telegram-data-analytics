@@ -37,5 +37,8 @@ with open('result.json', encoding='utf-8') as f:
             print(f'Matrix generated! Generating messages ({len(corpus)} unique words)')
             for i in range(25):
                 message_length = random.choice([len(message.split(" ")) for message in messages])
+                print('---')
                 print(markov_chain(matrix=matrix, corpus=corpus, corpus_indices=corpus_indices,n=message_length*10))
-            print('-----------')
+            print('''
+============================
+''')
