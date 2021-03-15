@@ -1,5 +1,7 @@
 import random
 from scipy.sparse import dok_matrix
+from tqdm import tqdm
+
 
 def generate_matrix(wordstream: list=None) -> dok_matrix:
 
@@ -19,7 +21,7 @@ def generate_matrix(wordstream: list=None) -> dok_matrix:
 
     last_word = ""
     done = 0
-    for word in wordstream:
+    for word in tqdm(wordstream, leave=False):
         current_index = corpus_indices.index(word)
         last_index = corpus_indices.index(last_word)
 
